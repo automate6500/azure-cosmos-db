@@ -1,9 +1,15 @@
+variable "enable_free_tier" {
+  type        = bool
+  default     = false
+  description = "Enable Free Tier pricing option for this Cosmos DB account. Defaults to false. Changing this forces a new resource to be created."
+}
+
 resource "azurerm_cosmosdb_account" "lab" {
   name                = azurerm_resource_group.lab.name
   resource_group_name = azurerm_resource_group.lab.name
   location            = azurerm_resource_group.lab.location
   offer_type          = "Standard"
-  enable_free_tier    = true
+  enable_free_tier    = var.enable_free_tier
 
   capabilities {
     name = "EnableCassandra"
