@@ -9,7 +9,7 @@ variable "location" {
 }
 
 resource "random_pet" "lab" {
-  length = 1
+  length = 2
 }
 
 resource "random_integer" "lab" {
