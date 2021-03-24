@@ -13,9 +13,7 @@
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| lab-vnet | Azure/vnet/azurerm |  |
+No Modules.
 
 ## Resources
 
