@@ -3,9 +3,9 @@ BRANCH = $(shell git branch --show-current)
 
 zip: check
 	$(shell [ $(BRANCH) == 'default' ])
-	zip -r ../zips/$(notdir $(CURDIR))-$(BRANCH)-$(TAG).zip . -x "*.git*" -x "*terraform*" -x "*~"
-	zip -r ../zips/$(notdir $(CURDIR)).zip . -x "*.git*" -x "*terraform*" -x "*~"
-	ls ../zips/
+	zip -r  ../zips/$(notdir $(CURDIR))-$(BRANCH)-$(TAG).zip . -x "*.git*" -x "*terraform*" -x "*~"
+	zip -r  ../zips/$(notdir $(CURDIR)).zip . -x "*.git*" -x "*terraform*" -x "*~"
+	ls -ltr ../zips/
 
 clean:
 	rm -vf ../zips/$(notdir $(CURDIR))*.zip
