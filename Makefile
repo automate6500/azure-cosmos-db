@@ -3,6 +3,7 @@ BRANCH = $(shell git branch --show-current)
 
 zip: check docs
 	$(shell [ $(BRANCH) == 'default' ])
+	mkdir -p ../zips
 	zip -r  ../zips/$(notdir $(CURDIR))-$(BRANCH)-$(TAG).zip . -x "*.git*" -x "*terraform*" -x "*~"
 	zip -r  ../zips/$(notdir $(CURDIR)).zip . -x "*.git*" -x "*terraform*" -x "*~"
 	ls -ltr ../zips/
